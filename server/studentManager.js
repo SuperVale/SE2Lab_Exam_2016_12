@@ -148,7 +148,7 @@ var searchStudentMark = function searchStudentMark(mark)
     {
         for (i=0; i < studentList.length; i++)
             {
-                    if (studentList[i].mark > mark.substr(1))
+                    if (studentList[i].mark > mark.substr(1,1))
                     {
                             ret.push(studentList[i]);
                     }
@@ -158,7 +158,7 @@ var searchStudentMark = function searchStudentMark(mark)
     {
         for (i=0; i < studentList.length; i++)
             {
-                    if (studentList[i].mark < mark.substr(1))
+                    if (studentList[i].mark < mark.substr(1,1))
                     {
                             ret.push(studentList[i]);
                     }
