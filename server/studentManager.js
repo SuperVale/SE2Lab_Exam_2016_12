@@ -60,6 +60,7 @@ var searchStudentSSN = function searchStudentSSN(SSN)
     
 }
 
+
 /**
  * @brief getter of the list of user
  * @return the list of user
@@ -135,6 +136,40 @@ var insertStudent = function insertStudent(student)
 
 //AGGIUNGERE QUI SOTTO NUOVE FUNZIONI
 
+/*
+ * @brief This function search for a student, given < or > + his Mark as one string
+ * @param StringMark
+ */
+var searchStudentMark = function searchStudentMark(mark)
+{
+    var ret = [];
+    
+    if(mark.substr(0, 1)==">")
+    {
+        for (i=0; i < studentList.length; i++)
+            {
+                    if (studentList[i].mark > mark.substr(1))
+                    {
+                            ret.push(studentList[i]);
+                    }
+        }
+    }
+    else if(mark.substr(0, 1)=="<")
+    {
+        for (i=0; i < studentList.length; i++)
+            {
+                    if (studentList[i].mark < mark.substr(1))
+                    {
+                            ret.push(studentList[i]);
+                    }
+        }
+    }
+    
+    //if reach this point return null
+    return ret;
+    
+}
+
 
 
 //export functions
@@ -142,5 +177,6 @@ exports.searchStudentID = searchStudentID;
 exports.searchStudentSSN = searchStudentSSN; 
 exports.deleteStudentID = deleteStudentID; 
 exports.deleteStudentSSN = deleteStudentSSN; 
-exports.insertStudent = insertStudent;  
+exports.insertStudent = insertStudent;
+exports.searchStudentMark = searchStudentMark;
 exports.getList = getList; 
